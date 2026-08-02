@@ -28,6 +28,6 @@ type RouteFiles = {
 };
 
 type RouteModules = {
-	root: typeof import("./app/root.js");
-	"routes/home": typeof import("./app/routes/home.js");
+	root: typeof import("./src/root.js");
+	"routes/home": typeof import("./src/routes/home.js");
 };

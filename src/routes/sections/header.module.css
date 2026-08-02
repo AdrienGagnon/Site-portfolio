@@ -1,0 +1,31 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	border-bottom: 1px solid #e8e8ee;
+	background: rgb(255 255 255 / 90%);
+	backdrop-filter: blur(12px);
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 72px;
+}
+
+.logo {
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+.navigationLinks {
+	display: flex;
+	gap: 28px;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.navigationLinks a:hover {
+	color: #5b46e8;
+}

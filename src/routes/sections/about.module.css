@@ -1,0 +1,20 @@
+.layout {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	gap: 80px;
+}
+
+.content {
+	font-size: 1.05rem;
+}
+
+.content p:last-of-type {
+	margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+	.layout {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+}

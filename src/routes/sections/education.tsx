@@ -1,0 +1,59 @@
+import { Card } from "../components/card";
+import { StudyCourses } from "../components/studyCourses";
+import { useLanguage } from "~/contexts/languageContext";
+
+import styles from "./education.module.css";
+
+export default function Education() {
+	const { text } = useLanguage();
+
+	return (
+		<section
+			aria-labelledby="education-title"
+			className="section"
+			id="education"
+		>
+			<div className="container">
+				<p className="section-label">{text.education.label}</p>
+
+				<h2 id="education-title">{text.education.studiesTitle}</h2>
+
+				<div className={styles.list}>
+					{text.studies.map((study) => (
+						<Card
+							className={styles.educationCard}
+							key={`${study.location}-${study.type}-${study.period}`}
+						>
+							<p className={styles.period}>{study.period}</p>
+
+							<div>
+								<h3 className={styles.degree}>{study.type}</h3>
+
+								<p className={styles.location}>
+									{study.location}
+								</p>
+
+								<p className={styles.description}>
+									{study.description}
+								</p>
+
+								{study.classes && study.classes.length > 0 && (
+									<StudyCourses
+										courses={study.classes}
+										label={text.education.relevantClasses}
+										showAllLabel={
+											text.education.showAllClasses
+										}
+										showLessLabel={
+											text.education.showLessClasses
+										}
+									/>
+								)}
+							</div>
+						</Card>
+					))}
+				</div>
+			</div>
+		</section>
+	);
+}
