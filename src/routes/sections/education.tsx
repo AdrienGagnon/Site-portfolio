@@ -3,6 +3,7 @@ import { StudyCourses } from "../components/studyCourses";
 import { useLanguage } from "~/contexts/languageContext";
 
 import styles from "./education.module.css";
+import { Internships } from "../components/internships";
 
 export default function Education() {
 	const { text } = useLanguage();
@@ -36,6 +37,22 @@ export default function Education() {
 								<p className={styles.description}>
 									{study.description}
 								</p>
+
+								{study.internships &&
+									study.internships.length > 0 && (
+										<Internships
+											internships={study.internships}
+											label={text.education.internships}
+											showAllLabel={
+												text.education
+													.showAllInternships
+											}
+											showLessLabel={
+												text.education
+													.showLessInternships
+											}
+										/>
+									)}
 
 								{study.classes && study.classes.length > 0 && (
 									<StudyCourses

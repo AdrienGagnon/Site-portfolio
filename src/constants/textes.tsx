@@ -1,3 +1,5 @@
+import { ICODETHIS_URL } from "./constants";
+
 export type Language = "fr" | "en";
 
 export type Study = {
@@ -6,12 +8,14 @@ export type Study = {
 	location: string;
 	description: string;
 	classes?: string[];
+	internships?: Experience[];
 };
 
 export type Experience = {
 	period: string;
 	role: string;
 	company: string;
+	site?: string;
 	description: string[];
 };
 
@@ -57,9 +61,14 @@ type LocalizedContent = {
 	education: {
 		label: string;
 		studiesTitle: string;
+
 		relevantClasses: string;
 		showAllClasses: string;
 		showLessClasses: string;
+
+		internships: string;
+		showAllInternships: string;
+		showLessInternships: string;
 	};
 
 	contact: {
@@ -67,6 +76,11 @@ type LocalizedContent = {
 		title: string;
 		description: string;
 		emailButton: string;
+		emailLabel: string;
+		socialLabel: string;
+		githubDescription: string;
+		linkedinDescription: string;
+		icodethisDescription: string;
 	};
 
 	studies: Study[];
@@ -109,6 +123,12 @@ export const content: Record<Language, LocalizedContent> = {
 			description:
 				"Une question, une proposition ou une occasion professionnelle? Écrivez-moi directement par courriel.",
 			emailButton: "M’écrire par courriel",
+
+			emailLabel: "Écrivez-moi",
+			socialLabel: "Retrouvez-moi également sur",
+			githubDescription: "Projets et code source",
+			linkedinDescription: "Parcours professionnel",
+			icodethisDescription: "Défis et interfaces",
 		},
 
 		about: {
@@ -129,6 +149,9 @@ export const content: Record<Language, LocalizedContent> = {
 			relevantClasses: "Cours suivis",
 			showAllClasses: "Voir tous les cours",
 			showLessClasses: "Afficher moins",
+			internships: "Stages",
+			showAllInternships: "Voir tous les stages",
+			showLessInternships: "Afficher moins de stages",
 		},
 
 		studies: [
@@ -137,7 +160,39 @@ export const content: Record<Language, LocalizedContent> = {
 				type: "Baccalauréat en chimie, régime coopératif",
 				location: "Université de Sherbrooke",
 				description:
-					"Formation universitaire en chimie comprenant des cours théoriques, des travaux pratiques en laboratoire et des stages en milieu professionnel.",
+					"Formation universitaire en chimie comprenant des cours théoriques, des travaux pratiques en laboratoire et quatre stages en milieu professionnel.",
+				internships: [
+					{
+						period: "Mai 2022 — Août 2022",
+						role: "Stagiaire en recherche en biologie",
+						company: "Commissariat à l’Énergie Atomique (CEA)",
+						site: "Grenoble, France",
+						description: [""],
+					},
+					{
+						period: "Septembre 2021 — Décembre 2021",
+						role: "Stagiaire en synthèse de peptides",
+						company:
+							"Institut de pharmacologie de Sherbrooke (IPS)",
+						site: "Sherbrooke",
+						description: [""],
+					},
+					{
+						period: "Janvier 2021 — Avril 2021",
+						role: "Stagiaire en recherche en chimie organique",
+						company: "OmegaChem",
+						site: "Lévis",
+						description: [""],
+					},
+					{
+						period: "Mai 2020 — Août 2020",
+						role: "Stagiaire en électrochimie",
+						company: "Laboratoire du Pre. Gessie Brisard",
+						site: "Université de Sherbrooke",
+
+						description: [""],
+					},
+				],
 			},
 			{
 				period: "2024",
@@ -193,30 +248,32 @@ export const content: Record<Language, LocalizedContent> = {
 
 		projects: [
 			{
-				title: "Nom du premier projet",
+				title: "ICodeThis",
 				description:
 					"Une courte description du projet, du problème résolu et de ce que tu as personnellement développé.",
-				image: "/projects/project-1.webp",
+				image: "/assets/icodethissample.png",
 				imageAlt: "Aperçu du premier projet",
-				technologies: ["React", "TypeScript", "Node.js"],
-				githubUrl: "https://github.com/AdrienGagnon",
+				technologies: ["JavaScript", "HTML", "CSS"],
+				githubUrl: ICODETHIS_URL,
 			},
 			{
-				title: "Nom du deuxième projet",
-				description:
-					"Une brève présentation des fonctionnalités principales et des apprentissages réalisés pendant le développement.",
-				image: "/projects/project-2.webp",
-				imageAlt: "Aperçu du deuxième projet",
-				technologies: ["C++", "Linux", "Git"],
-				githubUrl: "https://github.com/AdrienGagnon",
-			},
-			{
-				title: "Nom du troisième projet",
+				title: "RtPartition",
 				description:
 					"Une description concise expliquant l’objectif du projet et les technologies utilisées pour le réaliser.",
-				image: "/projects/project-3.webp",
+				image: "/assets/rtpartition.png",
 				imageAlt: "Aperçu du troisième projet",
-				technologies: ["Python", "SQL", "MongoDB"],
+				technologies: ["C++", "Lomse", "Qt"],
+				githubUrl: "https://github.com/AdrienGagnon/RtPartition",
+			},
+			{
+				title: "Ancien site web",
+				description:
+					"Une brève présentation des fonctionnalités principales et des apprentissages réalisés pendant le développement.",
+				image: "/assets/oldsite.png",
+				imageAlt: "Aperçu du deuxième projet",
+				technologies: ["React", "HTML", "CSS"],
+				githubUrl:
+					"https://github.com/AdrienGagnon/adrien-gagnon-portfolio",
 			},
 		],
 	},
@@ -244,8 +301,13 @@ export const content: Record<Language, LocalizedContent> = {
 			label: "Contact",
 			title: "Let’s work together",
 			description:
-				"Have a question, a proposal, or a professional opportunity? Feel free to contact me directly by email.",
-			emailButton: "Send me an email",
+				"Have a project, an opportunity, or simply want to connect? Feel free to get in touch.",
+			emailButton: "Send an email",
+			emailLabel: "Get in touch",
+			socialLabel: "You can also find me on",
+			githubDescription: "Projects and source code",
+			linkedinDescription: "Professional experience",
+			icodethisDescription: "UI challenges and designs",
 		},
 
 		about: {
@@ -266,6 +328,9 @@ export const content: Record<Language, LocalizedContent> = {
 			relevantClasses: "Relevant courses",
 			showAllClasses: "View all courses",
 			showLessClasses: "Show less",
+			internships: "Internships",
+			showAllInternships: "View all internships",
+			showLessInternships: "Show fewer internships",
 		},
 
 		studies: [
@@ -275,6 +340,38 @@ export const content: Record<Language, LocalizedContent> = {
 				location: "Université de Sherbrooke",
 				description:
 					"University education in chemistry combining theoretical courses, laboratory work, and professional internships.",
+				internships: [
+					{
+						period: "May 2022 — August 2022",
+						role: "Stagiaire en recherche en biologie",
+						company: "Commissariat à l’Énergie Atomique (CEA)",
+						site: "Grenoble, France",
+						description: [""],
+					},
+					{
+						period: "September 2021 — December 2021",
+						role: "Stagiaire en synthèse de peptides",
+						company:
+							"Institut de pharmacologie de Sherbrooke (IPS)",
+						site: "Sherbrooke",
+						description: [""],
+					},
+					{
+						period: "January 2021 — April 2021",
+						role: "Stagiaire en recherche en chimie organique",
+						company: "OmegaChem",
+						site: "Lévis",
+						description: [""],
+					},
+					{
+						period: "May 2020 — August 2020",
+						role: "Stagiaire en électrochimie",
+						company: "Laboratoire du Pre. Gessie Brisard",
+						site: "Université de Sherbrooke",
+
+						description: [""],
+					},
+				],
 			},
 			{
 				period: "2024",
@@ -330,30 +427,32 @@ export const content: Record<Language, LocalizedContent> = {
 
 		projects: [
 			{
-				title: "First project name",
+				title: "ICodeThis",
 				description:
-					"A short description of the project, the problem it solves, and what you personally developed.",
-				image: "/projects/project-1.webp",
-				imageAlt: "Preview of the first project",
-				technologies: ["React", "TypeScript", "Node.js"],
-				githubUrl: "https://github.com/AdrienGagnon",
+					"Une courte description du projet, du problème résolu et de ce que tu as personnellement développé.",
+				image: "/assets/icodethissample.png",
+				imageAlt: "Aperçu du premier projet",
+				technologies: ["JavaScript", "HTML", "CSS"],
+				githubUrl: ICODETHIS_URL,
 			},
 			{
-				title: "Second project name",
+				title: "RtPartition",
 				description:
-					"A brief overview of the main features and the skills developed while working on this project.",
-				image: "/projects/project-2.webp",
-				imageAlt: "Preview of the second project",
-				technologies: ["C++", "Linux", "Git"],
-				githubUrl: "https://github.com/AdrienGagnon",
+					"Une description concise expliquant l’objectif du projet et les technologies utilisées pour le réaliser.",
+				image: "/assets/rtpartition.png",
+				imageAlt: "Aperçu du troisième projet",
+				technologies: ["C++", "Lomse", "Qt"],
+				githubUrl: "https://github.com/AdrienGagnon/RtPartition",
 			},
 			{
-				title: "Third project name",
+				title: "Ancien site web",
 				description:
-					"A concise description of the project’s objective and the technologies used to build it.",
-				image: "/projects/project-3.webp",
-				imageAlt: "Preview of the third project",
-				technologies: ["Python", "SQL", "MongoDB"],
+					"Une brève présentation des fonctionnalités principales et des apprentissages réalisés pendant le développement.",
+				image: "/assets/oldsite.png",
+				imageAlt: "Aperçu du deuxième projet",
+				technologies: ["React", "HTML", "CSS"],
+				githubUrl:
+					"https://github.com/AdrienGagnon/adrien-gagnon-portfolio",
 			},
 		],
 	},

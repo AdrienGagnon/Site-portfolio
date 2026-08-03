@@ -7,7 +7,7 @@ import Footer from "./sections/footer";
 import Header from "./sections/header";
 import Hero from "./sections/hero";
 import Education from "./sections/education";
-import Projets from "./sections/projets";
+import Projets from "./sections/projects";
 
 export function meta() {
 	return [

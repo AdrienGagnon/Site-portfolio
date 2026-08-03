@@ -16,9 +16,9 @@
 	--color-border: #e1e1e7;
 	--color-border-strong: #d8d8df;
 
-	--container-width: 1100px;
-	--header-height: 72px;
-	--section-spacing: 100px;
+	--container-width: 68.75rem;
+	--header-height: 4.5rem;
+	--section-spacing: 6.25rem;
 
 	color: var(--color-text);
 	background: var(--color-surface);
@@ -90,7 +90,11 @@ p {
 }
 
 .section {
+	display: flex;
+	min-height: calc(100svh - var(--header-height));
+	align-items: center;
 	padding-block: var(--section-spacing);
+	scroll-margin-top: var(--header-height);
 }
 
 .section h2 {
@@ -128,6 +132,12 @@ main > section:nth-of-type(even) {
 	font-weight: 600;
 	line-height: 1.35;
 	overflow-wrap: anywhere;
+	transition: ease-in-out 100ms;
+}
+
+.tag:hover {
+	user-select: none;
+	background-color: var(--color-surface-alt);
 }
 
 li {
@@ -199,6 +209,11 @@ li::marker {
 	border: 1px solid var(--color-border);
 	border-radius: 16px;
 	background: var(--color-surface);
+	transition: ease-in-out 100ms;
+}
+
+.card:hover {
+	background-color: var(--color-surface-alt);
 }
 
 @media (max-width: 700px) {
@@ -229,6 +244,10 @@ li::marker {
 
 	.container {
 		width: min(var(--container-width), calc(100% - 32px));
+	}
+
+	.section {
+		min-height: auto;
 	}
 }
 

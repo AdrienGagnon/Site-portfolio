@@ -1,7 +1,9 @@
+import styles from "./footer.module.css";
+
 export default function Footer() {
 	return (
-		<footer className="footer">
-			<div className="container">
+		<footer className={styles.footer}>
+			<div className={`container ${styles.container}`}>
 				<p>© {new Date().getFullYear()} Adrien Gagnon</p>
 			</div>
 		</footer>

@@ -1,0 +1,168 @@
+.container {
+	margin-top: 32px;
+	padding-top: 28px;
+	border-top: 1px solid var(--color-border);
+}
+
+.title {
+	margin-bottom: 22px;
+
+	color: var(--color-text);
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+.internship {
+	position: relative;
+
+	display: grid;
+	grid-template-columns: 14px minmax(0, 1fr);
+	gap: 18px;
+}
+
+.singleInternship {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.internship:not(.singleInternship):not(:last-child)::before {
+	position: absolute;
+	top: 50%;
+	bottom: calc(-50% - 22px);
+	left: 6px;
+
+	width: 2px;
+	background: var(--color-border);
+
+	content: "";
+}
+
+.marker {
+	position: relative;
+	z-index: 1;
+
+	align-self: center;
+
+	width: 14px;
+	height: 14px;
+	margin: 0;
+	border: 3px solid rgb(91 70 232 / 20%);
+	border-radius: 50%;
+
+	background: var(--color-primary);
+	box-shadow: 0 0 0 4px var(--color-surface);
+}
+
+.content {
+	min-width: 0;
+	padding: 20px 22px;
+	border: 1px solid var(--color-border);
+	border-radius: 14px;
+
+	background: var(--color-surface-alt);
+}
+
+.period {
+	margin-bottom: 5px;
+
+	color: var(--color-primary);
+	font-size: 0.82rem;
+	font-weight: 750;
+}
+
+.role {
+	margin: 0 0 4px;
+
+	color: var(--color-text);
+	font-size: 1.05rem;
+	line-height: 1.4;
+}
+
+.company {
+	margin: 0;
+
+	color: var(--color-text);
+	font-weight: 650;
+}
+
+.site {
+	margin: 2px 0 0;
+	font-size: 0.92rem;
+}
+
+.description {
+	margin: 16px 0 0;
+	padding-left: 18px;
+
+	color: var(--color-text-muted);
+	font-size: 0.95rem;
+}
+
+.description li + li {
+	margin-top: 7px;
+}
+
+.toggleButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	margin-top: 22px;
+	padding: 9px 14px;
+	border: 1px solid rgb(91 70 232 / 20%);
+	border-radius: 10px;
+
+	background: rgb(91 70 232 / 6%);
+	color: var(--color-primary);
+
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 750;
+
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease,
+		transform 180ms ease;
+}
+
+.toggleButton:hover {
+	border-color: rgb(91 70 232 / 35%);
+	background: rgb(91 70 232 / 11%);
+	transform: translateY(-1px);
+}
+
+.toggleButton:focus-visible {
+	outline: 3px solid rgb(91 70 232 / 25%);
+	outline-offset: 3px;
+}
+
+.arrow {
+	display: inline-block;
+	transition: transform 180ms ease;
+}
+
+.arrowOpen {
+	transform: rotate(180deg);
+}
+
+@media (max-width: 700px) {
+	.container {
+		margin-top: 26px;
+		padding-top: 24px;
+	}
+
+	.internship {
+		gap: 12px;
+	}
+
+	.content {
+		padding: 18px;
+	}
+}

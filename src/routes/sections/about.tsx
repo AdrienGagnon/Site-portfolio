@@ -1,7 +1,7 @@
 import { skills } from "~/constants/textes";
 import { useLanguage } from "~/contexts/languageContext";
 
-import styles from "./About.module.css";
+import styles from "./about.module.css";
 
 export default function About() {
 	const { text } = useLanguage();

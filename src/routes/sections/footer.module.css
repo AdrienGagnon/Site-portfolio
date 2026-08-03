@@ -1,0 +1,20 @@
+.footer {
+	border-top: 0.0625rem solid var(--color-border);
+	background: var(--color-surface-alt);
+}
+
+.container {
+	display: flex;
+	min-height: 5rem;
+	align-items: center;
+	justify-content: center;
+	padding-block: 1.5rem;
+}
+
+.container p {
+	margin: 0;
+
+	color: var(--color-text-muted);
+	font-size: 0.875rem;
+	text-align: center;
+}
