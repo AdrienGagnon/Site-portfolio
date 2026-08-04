@@ -26,6 +26,7 @@ export type Project = {
 	imageAlt: string;
 	technologies: string[];
 	githubUrl?: string;
+	website?: string;
 };
 
 type LocalizedContent = {
@@ -42,8 +43,11 @@ type LocalizedContent = {
 		eyebrow: string;
 		jobTitle: string;
 		description: string;
+		resumeButton: string;
 		aboutButton: string;
 		contactButton: string;
+		downloadResumeFr: string;
+		downloadResumeEn: string;
 	};
 
 	about: {
@@ -81,6 +85,9 @@ type LocalizedContent = {
 		githubDescription: string;
 		linkedinDescription: string;
 		icodethisDescription: string;
+		cv: string;
+		emailSubject: string;
+		emailBody: string;
 	};
 
 	studies: Study[];
@@ -89,8 +96,8 @@ type LocalizedContent = {
 	projectsSection: {
 		label: string;
 		title: string;
-		description: string;
-		viewProject: string;
+		viewWebsite: string;
+		viewGithub: string;
 		viewAllProjects: string;
 	};
 
@@ -113,8 +120,11 @@ export const content: Record<Language, LocalizedContent> = {
 			jobTitle: "Développeur logiciel",
 			description:
 				"Je conçois des logiciels fiables, efficaces et adaptées aux besoins des utilisateurs. Curieux et polyvalent, j’aime résoudre des problèmes complexes et apprendre de nouvelles technologies.",
+			resumeButton: "Consulter mon CV",
 			aboutButton: "À propos de moi",
 			contactButton: "Me contacter",
+			downloadResumeFr: "CV français",
+			downloadResumeEn: "English CV",
 		},
 
 		contact: {
@@ -129,6 +139,9 @@ export const content: Record<Language, LocalizedContent> = {
 			githubDescription: "Projets et code source",
 			linkedinDescription: "Parcours professionnel",
 			icodethisDescription: "Défis et interfaces",
+			cv: "Voir mon CV",
+			emailSubject: "Contact depuis votre portfolio",
+			emailBody: "Bonjour Adrien,\n\nJe vous contacte concernant...\n\n",
 		},
 
 		about: {
@@ -155,6 +168,34 @@ export const content: Record<Language, LocalizedContent> = {
 		},
 
 		studies: [
+			{
+				period: "2025 — 2026",
+				type: "Maîtrise en informatique de type cours",
+				location: "Université de Sherbrooke",
+				description:
+					"Ce programme comprend trois sessions de cours avancés en informatique, suivies d’un stage semblable à ceux d’un parcours coopératif. J’y ai étudié de nombreux sujets liés au développement logiciel, à l’intelligence artificielle, aux réseaux et aux systèmes informatiques.",
+				classes: [
+					"Informatique cognitive",
+					"Techniques d’apprentissage",
+					"Applications Internet et mobilité",
+					"Modèles hiérarchiques pour l’apprentissage machine de données spatiotemporelles",
+					"Algorithmes et structures de données",
+					"Sécurité et cryptographie",
+					"Processus concurrents et parallélisme",
+					"Techniques et outils de développement",
+					"Télématique",
+					"Théorie du calcul",
+					"Conception de systèmes temps réel",
+					"Réseaux neuronaux",
+				],
+			},
+			{
+				period: "2024",
+				type: "Propédeutique en informatique",
+				location: "Université de Sherbrooke",
+				description:
+					"Pour accéder à la maîtrise en informatique, j’ai suivi pendant trois sessions une version accélérée du baccalauréat en informatique afin d’acquérir les connaissances fondamentales nécessaires.",
+			},
 			{
 				period: "2019 — 2022",
 				type: "Baccalauréat en chimie, régime coopératif",
@@ -194,34 +235,6 @@ export const content: Record<Language, LocalizedContent> = {
 					},
 				],
 			},
-			{
-				period: "2024",
-				type: "Propédeutique en informatique",
-				location: "Université de Sherbrooke",
-				description:
-					"Pour accéder à la maîtrise en informatique, j’ai suivi pendant trois sessions une version accélérée du baccalauréat en informatique afin d’acquérir les connaissances fondamentales nécessaires.",
-			},
-			{
-				period: "2025 — 2026",
-				type: "Maîtrise en informatique de type cours",
-				location: "Université de Sherbrooke",
-				description:
-					"Ce programme comprend trois sessions de cours avancés en informatique, suivies d’un stage semblable à ceux d’un parcours coopératif. J’y ai étudié de nombreux sujets liés au développement logiciel, à l’intelligence artificielle, aux réseaux et aux systèmes informatiques.",
-				classes: [
-					"Informatique cognitive",
-					"Techniques d’apprentissage",
-					"Applications Internet et mobilité",
-					"Modèles hiérarchiques pour l’apprentissage machine de données spatiotemporelles",
-					"Algorithmes et structures de données",
-					"Sécurité et cryptographie",
-					"Processus concurrents et parallélisme",
-					"Techniques et outils de développement",
-					"Télématique",
-					"Théorie du calcul",
-					"Conception de systèmes temps réel",
-					"Réseaux neuronaux",
-				],
-			},
 		],
 
 		experiences: [
@@ -240,9 +253,8 @@ export const content: Record<Language, LocalizedContent> = {
 		projectsSection: {
 			label: "Mes réalisations",
 			title: "Quelques projets",
-			description:
-				"Voici une sélection de projets réalisés dans le cadre de mes études, de mes expériences professionnelles et de mon apprentissage personnel.",
-			viewProject: "Voir le projet",
+			viewWebsite: "Voir le site",
+			viewGithub: "Voir sur GitHub",
 			viewAllProjects: "Voir tous mes projets sur GitHub",
 		},
 
@@ -254,7 +266,7 @@ export const content: Record<Language, LocalizedContent> = {
 				image: "/assets/icodethissample.png",
 				imageAlt: "Aperçu du premier projet",
 				technologies: ["JavaScript", "HTML", "CSS"],
-				githubUrl: ICODETHIS_URL,
+				website: ICODETHIS_URL,
 			},
 			{
 				title: "RtPartition",
@@ -293,8 +305,11 @@ export const content: Record<Language, LocalizedContent> = {
 			jobTitle: "Software Developer",
 			description:
 				"I design reliable and efficient software solutions tailored to users’ needs. Curious and versatile, I enjoy solving complex problems and learning new technologies.",
+			resumeButton: "View my résumé",
 			aboutButton: "About me",
 			contactButton: "Contact me",
+			downloadResumeFr: "CV français",
+			downloadResumeEn: "English CV",
 		},
 
 		contact: {
@@ -308,6 +323,9 @@ export const content: Record<Language, LocalizedContent> = {
 			githubDescription: "Projects and source code",
 			linkedinDescription: "Professional experience",
 			icodethisDescription: "UI challenges and designs",
+			cv: "View my CV",
+			emailSubject: "Contact from your portfolio",
+			emailBody: "Hello Adrien,\n\nI am reaching out regarding...\n\n",
 		},
 
 		about: {
@@ -334,6 +352,34 @@ export const content: Record<Language, LocalizedContent> = {
 		},
 
 		studies: [
+			{
+				period: "2025 — 2026",
+				type: "Course-Based Master’s Degree in Computer Science",
+				location: "Université de Sherbrooke",
+				description:
+					"This program consists of three semesters of advanced computer science courses followed by an internship similar to those offered through a cooperative education program. I studied a wide range of topics related to software development, artificial intelligence, networks, and computer systems.",
+				classes: [
+					"Cognitive Computing",
+					"Machine Learning Techniques",
+					"Internet and Mobile Applications",
+					"Hierarchical Models for Machine Learning on Spatiotemporal Data",
+					"Algorithms and Data Structures",
+					"Security and Cryptography",
+					"Concurrent Processes and Parallelism",
+					"Development Techniques and Tools",
+					"Telematics",
+					"Theory of Computation",
+					"Real-Time Systems Design",
+					"Neural Networks",
+				],
+			},
+			{
+				period: "2024",
+				type: "Computer Science Preparatory Program",
+				location: "Université de Sherbrooke",
+				description:
+					"To qualify for the master’s degree in computer science, I completed an accelerated version of the computer science bachelor’s program over three semesters to acquire the required foundational knowledge.",
+			},
 			{
 				period: "2019 — 2022",
 				type: "Bachelor’s Degree in Chemistry, Co-op Program",
@@ -373,34 +419,6 @@ export const content: Record<Language, LocalizedContent> = {
 					},
 				],
 			},
-			{
-				period: "2024",
-				type: "Computer Science Preparatory Program",
-				location: "Université de Sherbrooke",
-				description:
-					"To qualify for the master’s degree in computer science, I completed an accelerated version of the computer science bachelor’s program over three semesters to acquire the required foundational knowledge.",
-			},
-			{
-				period: "2025 — 2026",
-				type: "Course-Based Master’s Degree in Computer Science",
-				location: "Université de Sherbrooke",
-				description:
-					"This program consists of three semesters of advanced computer science courses followed by an internship similar to those offered through a cooperative education program. I studied a wide range of topics related to software development, artificial intelligence, networks, and computer systems.",
-				classes: [
-					"Cognitive Computing",
-					"Machine Learning Techniques",
-					"Internet and Mobile Applications",
-					"Hierarchical Models for Machine Learning on Spatiotemporal Data",
-					"Algorithms and Data Structures",
-					"Security and Cryptography",
-					"Concurrent Processes and Parallelism",
-					"Development Techniques and Tools",
-					"Telematics",
-					"Theory of Computation",
-					"Real-Time Systems Design",
-					"Neural Networks",
-				],
-			},
 		],
 
 		experiences: [
@@ -419,9 +437,8 @@ export const content: Record<Language, LocalizedContent> = {
 		projectsSection: {
 			label: "My work",
 			title: "Selected projects",
-			description:
-				"Here is a selection of projects completed through my studies, professional experience, and personal learning.",
-			viewProject: "View project",
+			viewWebsite: "View website",
+			viewGithub: "View on GitHub",
 			viewAllProjects: "View all my projects on GitHub",
 		},
 
@@ -433,7 +450,7 @@ export const content: Record<Language, LocalizedContent> = {
 				image: "/assets/icodethissample.png",
 				imageAlt: "Aperçu du premier projet",
 				technologies: ["JavaScript", "HTML", "CSS"],
-				githubUrl: ICODETHIS_URL,
+				website: ICODETHIS_URL,
 			},
 			{
 				title: "RtPartition",

@@ -100,6 +100,7 @@
 }
 
 .emailLabel,
+.resumeLabel,
 .socialLabel {
 	margin: 0;
 
@@ -128,10 +129,25 @@
 	filter: brightness(0) invert(1);
 }
 
+.contactCard a:hover {
+	transform: translateX(2px);
+}
+
 .divider {
 	height: 1px;
 	margin-block: 30px;
 	background: var(--color-border);
+}
+
+.resumeList {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+
+	margin: 18px 0 0;
+	padding: 0;
+
+	list-style: none;
 }
 
 .socialLinks {
@@ -171,7 +187,7 @@
 	border-color: rgb(91 70 232 / 30%);
 	background: rgb(91 70 232 / 5%);
 	box-shadow: 0 10px 24px rgb(91 70 232 / 8%);
-	transform: translateY(-2px);
+	transform: translateX(2px);
 }
 
 .socialLinks a:focus-visible {
@@ -213,15 +229,12 @@
 }
 
 .externalArrow {
-	color: var(--color-primary);
-	font-size: 1.1rem;
-	font-weight: 700;
-
-	transition: transform 180ms ease;
+	width: 1.6rem;
+	height: 1.6rem;
 }
 
-.socialLinks a:hover .externalArrow {
-	transform: translate(2px, -2px);
+.externalArrow svg {
+	fill: var(--color-text);
 }
 
 @media (max-width: 850px) {

@@ -1,0 +1,157 @@
+@import url(../../../variables.css);
+
+.backgroundContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.backgroundContainer {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.lines {
+	position: absolute;
+	aspect-ratio: 1;
+	z-index: 99;
+}
+
+.lines:nth-child(1) {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 70%;
+	aspect-ratio: 1;
+	z-index: -1;
+}
+
+.lines:nth-child(2) {
+	right: 0;
+	bottom: 0;
+	height: 70%;
+}
+
+.lines:nth-child(3) {
+	scale: 1.5 1;
+	height: 200px;
+	width: 1700px;
+	right: 0;
+	top: 0;
+}
+
+.top-right,
+#top-right-animation {
+	translate: 20%;
+	stroke-width: 0.8;
+}
+
+.lines path {
+	fill: transparent;
+	stroke: color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+#bottom-left-animation,
+#bottom-right-animation,
+#top-right-animation {
+	stroke: color-mix(in srgb, var(--color-primary-hover) 50%, transparent);
+	stroke-linecap: round;
+
+	z-index: 10;
+
+	filter: drop-shadow(
+			0 0 0.1rem
+				color-mix(in srgb, var(--color-primary-hover) 100%, transparent)
+		)
+		drop-shadow(
+			0 0 0.3rem
+				color-mix(in srgb, var(--color-primary-hover) 65%, transparent)
+		)
+		drop-shadow(
+			0 0 0.6rem
+				color-mix(in srgb, var(--color-primary-hover) 35%, transparent)
+		)
+		drop-shadow(
+			0 0 1rem
+				color-mix(in srgb, var(--color-primary-hover) 15%, transparent)
+		);
+}
+
+#bottom-left-animation,
+#bottom-right-animation {
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+}
+
+#top-right-animation {
+	stroke-dasharray: 600;
+	stroke-dashoffset: 600;
+}
+
+#bottom-left-animation {
+	animation: dash-bottom-left 10s forwards infinite linear;
+}
+
+#bottom-right-animation {
+	animation: dash-bottom-right 10s forwards infinite linear;
+}
+
+#top-right-animation {
+	animation: dash-top-right 10s forwards infinite linear;
+}
+
+@keyframes dash-bottom-left {
+	from {
+		stroke-dashoffset: 400;
+	}
+	16% {
+		stroke-dashoffset: 0;
+	}
+	38% {
+		stroke-dashoffset: -400;
+	}
+	100% {
+		stroke-dashoffset: -400;
+	}
+}
+
+@keyframes dash-bottom-right {
+	from {
+		stroke-dashoffset: -400;
+	}
+	28% {
+		stroke-dashoffset: -400;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	71% {
+		stroke-dashoffset: 400;
+	}
+	to {
+		stroke-dashoffset: 400;
+	}
+}
+
+@keyframes dash-top-right {
+	from {
+		stroke-dashoffset: -600;
+	}
+	61% {
+		stroke-dashoffset: -600;
+	}
+	83% {
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dashoffset: 600;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.lines {
+		display: none;
+	}
+}
