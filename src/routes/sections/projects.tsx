@@ -1,8 +1,6 @@
 import { GITHUB_URL } from "~/constants/constants";
 import { useLanguage } from "~/contexts/languageContext";
 
-import fastForward from "/assets/fast-forward.png";
-import fastforwardWhite from "/assets/fast-forwardWhite.png";
 import githubBlue from "/assets/githubBlue.png";
 
 import styles from "./projects.module.css";
