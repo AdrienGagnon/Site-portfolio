@@ -3,25 +3,6 @@
 	overflow: hidden;
 }
 
-.projectsSection::before {
-	position: absolute;
-	top: 8rem;
-	left: -15rem;
-
-	width: 31rem;
-	height: 31rem;
-	border-radius: 50%;
-
-	background: radial-gradient(
-		circle,
-		rgb(91 70 232 / 8%),
-		rgb(91 70 232 / 0%) 70%
-	);
-
-	content: "";
-	pointer-events: none;
-}
-
 .container {
 	position: relative;
 	z-index: 1;

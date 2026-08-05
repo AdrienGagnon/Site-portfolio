@@ -1,8 +1,9 @@
 import { useLanguage } from "~/contexts/languageContext";
 
 import styles from "./hero.module.css";
-import HeaderBackground from "~/routes/components/background/HeaderBackground";
+
 import Reveal from "~/utils/reveal";
+import HeaderBackground from "../components/background/HeaderBackground";
 
 export default function Hero() {
 	const { text } = useLanguage();
@@ -10,7 +11,6 @@ export default function Hero() {
 	return (
 		<section aria-labelledby="hero-title" className={styles.hero} id="home">
 			<HeaderBackground />
-
 			<div className="container">
 				<Reveal>
 					<p className="section-label">{text.hero.eyebrow}</p>

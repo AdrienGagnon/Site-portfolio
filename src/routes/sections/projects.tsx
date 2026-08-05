@@ -6,6 +6,7 @@ import Reveal from "~/utils/reveal";
 import LinkIcon from "../components/icons/linkIcon";
 import GithubIcon from "../components/icons/githubIcon";
 import GithubIconBorder from "../components/icons/githubIconBorder";
+import ProjectsBackground from "../components/background/projectsBackground";
 
 export default function Projects() {
 	const { text } = useLanguage();
@@ -16,6 +17,7 @@ export default function Projects() {
 			className={`section ${styles.projectsSection}`}
 			id="projects"
 		>
+			{/* <ProjectsBackground /> */}
 			<div className={`container ${styles.container}`}>
 				<div className={styles.heading}>
 					<div className={styles.headingTitle}>

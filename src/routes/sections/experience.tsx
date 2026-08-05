@@ -4,6 +4,7 @@ import Reveal from "~/utils/reveal";
 
 import styles from "./experience.module.css";
 import LinkIcon from "../components/icons/linkIcon";
+import ExperienceBackground from "../components/background/experiencesBackground";
 
 export default function Experience() {
 	const { text } = useLanguage();
@@ -14,6 +15,7 @@ export default function Experience() {
 			className="section"
 			id="experience"
 		>
+			<ExperienceBackground />
 			<div className="container">
 				<Reveal>
 					<p className="section-label">{text.career.label}</p>

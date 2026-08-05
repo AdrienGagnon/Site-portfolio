@@ -1,0 +1,85 @@
+.wrapper {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+
+	overflow: hidden;
+
+	pointer-events: none;
+}
+
+.bottomRight {
+	right: 0;
+	bottom: 0;
+	height: 31.25rem;
+}
+
+.bottomLeft {
+	bottom: 0;
+	left: 0;
+	height: 31.25rem;
+}
+
+.bottomRightAnimated,
+.bottomLeftAnimated {
+	stroke-dasharray: 900;
+	stroke-dashoffset: 900;
+}
+
+.bottomRightAnimated {
+	stroke-dasharray: 1100;
+	stroke-dashoffset: 1100;
+}
+
+.bottomRightAnimated {
+	animation: dashBottomRight 10s linear infinite;
+}
+
+.bottomLeftAnimated {
+	animation: dashBottomLeft 10s linear infinite;
+}
+
+@keyframes dashBottomRight {
+	0%,
+	66% {
+		stroke-dashoffset: 1100;
+	}
+
+	83% {
+		stroke-dashoffset: 0;
+	}
+
+	100% {
+		stroke-dashoffset: -1100;
+	}
+}
+
+@keyframes dashBottomLeft {
+	0%,
+	28% {
+		stroke-dashoffset: 900;
+	}
+
+	50% {
+		stroke-dashoffset: 0;
+	}
+
+	71%,
+	100% {
+		stroke-dashoffset: -900;
+	}
+}
+
+@media (max-width: 53.125rem) {
+	.wrapper {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bottomLeftAnimated,
+	.bottomRightAnimated {
+		animation: none;
+		stroke-dashoffset: 0;
+	}
+}

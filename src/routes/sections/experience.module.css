@@ -32,6 +32,7 @@
 	line-height: 1.4;
 
 	transition: all 150ms ease;
+	cursor: pointer;
 }
 
 .company:hover {

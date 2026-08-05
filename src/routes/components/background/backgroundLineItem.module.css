@@ -1,0 +1,82 @@
+:root {
+	--background-line-color: rgb(129, 160, 196);
+	--background-line-active-color: rgb(116, 185, 231);
+}
+
+.line {
+	position: absolute;
+
+	display: block;
+	overflow: visible;
+
+	pointer-events: none;
+	filter: blur(0.08rem);
+}
+
+.basePath,
+.animatedPath {
+	fill: none;
+
+	vector-effect: non-scaling-stroke;
+}
+
+.basePath {
+	stroke: var(--background-line-color, var(--color-primary));
+	stroke-opacity: 0.5;
+}
+
+.animatedPath {
+	stroke: var(--background-line-active-color, var(--color-primary-hover));
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-opacity: 0.95;
+
+	filter: drop-shadow(
+			0 0 0.1rem
+				color-mix(
+					in srgb,
+					var(
+							--background-line-active-color,
+							var(--color-primary-hover)
+						)
+						100%,
+					transparent
+				)
+		)
+		drop-shadow(
+			0 0 0.3rem
+				color-mix(
+					in srgb,
+					var(
+							--background-line-active-color,
+							var(--color-primary-hover)
+						)
+						65%,
+					transparent
+				)
+		)
+		drop-shadow(
+			0 0 0.6rem
+				color-mix(
+					in srgb,
+					var(
+							--background-line-active-color,
+							var(--color-primary-hover)
+						)
+						35%,
+					transparent
+				)
+		)
+		drop-shadow(
+			0 0 1rem
+				color-mix(
+					in srgb,
+					var(
+							--background-line-active-color,
+							var(--color-primary-hover)
+						)
+						15%,
+					transparent
+				)
+		);
+}
