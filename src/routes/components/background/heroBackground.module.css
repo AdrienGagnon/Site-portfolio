@@ -41,16 +41,16 @@
 
 .bottomLeftAnimated,
 .bottomRightAnimated {
-	stroke-dasharray: 700;
+	stroke-dasharray: 900;
 }
 
 .bottomLeftAnimated {
-	stroke-dashoffset: 700;
+	stroke-dashoffset: 900;
 	animation: dashBottomLeft 10s linear infinite;
 }
 
 .bottomRightAnimated {
-	stroke-dashoffset: -700;
+	stroke-dashoffset: -900;
 	animation: dashBottomRight 10s linear infinite;
 }
 
@@ -62,7 +62,7 @@
 
 @keyframes dashBottomLeft {
 	0% {
-		stroke-dashoffset: 700;
+		stroke-dashoffset: 900;
 	}
 
 	16% {
@@ -71,14 +71,14 @@
 
 	38%,
 	100% {
-		stroke-dashoffset: -700;
+		stroke-dashoffset: -900;
 	}
 }
 
 @keyframes dashBottomRight {
 	0%,
 	28% {
-		stroke-dashoffset: -700;
+		stroke-dashoffset: -900;
 	}
 
 	50% {
@@ -87,7 +87,7 @@
 
 	71%,
 	100% {
-		stroke-dashoffset: 700;
+		stroke-dashoffset: 900;
 	}
 }
 
