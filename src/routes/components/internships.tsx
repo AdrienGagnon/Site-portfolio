@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 
 import styles from "./internships.module.css";
+import { UnderlinedButton } from "./buttons/underlinedButton";
 
 interface Internship {
 	period: string;
@@ -96,24 +97,13 @@ export function Internships({
 			</div>
 
 			{internships.length > 1 && (
-				<button
-					aria-controls={internshipsId}
-					aria-expanded={showAll}
-					className={styles.toggleButton}
-					onClick={() => setShowAll((current) => !current)}
-					type="button"
-				>
-					{showAll ? showLessLabel : showAllLabel}
-
-					<span
-						aria-hidden="true"
-						className={`${styles.arrow} ${
-							showAll ? styles.arrowOpen : ""
-						}`}
-					>
-						↓
-					</span>
-				</button>
+				<UnderlinedButton
+					controlsId={internshipsId}
+					isExpanded={showAll}
+					onToggle={() => setShowAll((currentValue) => !currentValue)}
+					showAllLabel={showAllLabel}
+					showLessLabel={showLessLabel}
+				/>
 			)}
 		</div>
 	);

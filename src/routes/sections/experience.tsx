@@ -3,6 +3,7 @@ import { useLanguage } from "~/contexts/languageContext";
 import Reveal from "~/utils/reveal";
 
 import styles from "./experience.module.css";
+import LinkIcon from "../components/icons/linkIcon";
 
 export default function Experience() {
 	const { text } = useLanguage();
@@ -36,9 +37,16 @@ export default function Experience() {
 										{experience.role}
 									</h3>
 
-									<p className={styles.company}>
-										{experience.company}
-									</p>
+									<a
+										aria-label={`${experience.company} — ouvrir le site`}
+										className={styles.company}
+										href={experience.link}
+										rel="noopener noreferrer"
+										target="_blank"
+									>
+										<span>{experience.company}</span>
+										<LinkIcon />
+									</a>
 
 									<ul className={styles.description}>
 										{experience.description.map((item) => (

@@ -14,14 +14,28 @@
 }
 
 .navigation {
-	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+	align-items: center;
+	gap: 2rem;
+
+	width: 100%;
+	min-height: 4.75rem;
+	padding-inline: clamp(1.25rem, 3vw, 3rem);
+}
+
+.languageSwitch {
+	justify-self: end;
 
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 32px;
+	flex-shrink: 0;
 
-	min-height: 76px;
+	padding: 0.25rem;
+	border: 0.0625rem solid #e4e4ec;
+	border-radius: 0.75rem;
+
+	background: #f4f4f8;
 }
 
 .logo {
@@ -32,6 +46,9 @@
 	font-weight: 800;
 	letter-spacing: -0.04em;
 	text-decoration: none;
+	justify-self: start;
+
+	white-space: nowrap;
 
 	transition:
 		transform 180ms ease,
@@ -47,12 +64,14 @@
 	display: flex;
 	align-items: center;
 	gap: 28px;
+	display: contents;
 }
 
 .navigationLinks {
 	display: flex;
 	align-items: center;
-	gap: 4px;
+	justify-content: center;
+	gap: 0.25rem;
 
 	font-size: 0.95rem;
 	font-weight: 600;
@@ -115,13 +134,14 @@
 .languageSwitch {
 	display: flex;
 	align-items: center;
+	justify-self: end;
 	flex-shrink: 0;
 
-	padding: 4px;
-	border: 1px solid #e4e4ec;
-	border-radius: 12px;
+	padding: 0.25rem;
+	border: 1px solid var(--color-border);
+	border-radius: 0.75rem;
 
-	background: #f4f4f8;
+	background: var(--color-surface-hover);
 }
 
 .languageSwitch button {
@@ -207,7 +227,14 @@
 
 @media (max-width: 760px) {
 	.navigation {
-		min-height: 68px;
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		min-height: 4.25rem;
+		padding-inline: 1rem;
 	}
 
 	.menuButton {
@@ -217,25 +244,29 @@
 
 	.navigationRight {
 		position: absolute;
-		top: calc(100% + 10px);
-		right: 0;
-		left: 0;
+		top: calc(100% + 0.625rem);
+		right: 1rem;
+		left: 1rem;
 
 		display: flex;
 		align-items: stretch;
 		flex-direction: column;
-		gap: 18px;
+		gap: 1.125rem;
 
-		padding: 18px;
-		border: 1px solid rgb(15 23 42 / 10%);
-		border-radius: 16px;
+		padding: 1.125rem;
+		border: 0.0625rem solid rgb(15 23 42 / 10%);
+		border-radius: 1rem;
 
 		background: var(--color-surface);
-		box-shadow: 0 16px 40px rgb(15 23 42 / 14%);
+		box-shadow: 0 1rem 2.5rem rgb(15 23 42 / 14%);
 
 		opacity: 0;
 		pointer-events: none;
-		transform: translateY(-10px);
+		transform: translateY(-0.625rem);
+
+		transition:
+			opacity 180ms ease,
+			transform 180ms ease;
 	}
 
 	.navigationRightOpen {

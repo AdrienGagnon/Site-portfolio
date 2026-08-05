@@ -17,6 +17,7 @@ export type Experience = {
 	company: string;
 	site?: string;
 	description: string[];
+	link?: string;
 };
 
 export type Project = {
@@ -88,6 +89,7 @@ type LocalizedContent = {
 		cv: string;
 		emailSubject: string;
 		emailBody: string;
+		opensInNewTab: string;
 	};
 
 	studies: Study[];
@@ -142,6 +144,7 @@ export const content: Record<Language, LocalizedContent> = {
 			cv: "Voir mon CV",
 			emailSubject: "Contact depuis votre portfolio",
 			emailBody: "Bonjour Adrien,\n\nJe vous contacte concernant...\n\n",
+			opensInNewTab: "s’ouvre dans un nouvel onglet",
 		},
 
 		about: {
@@ -326,6 +329,7 @@ export const content: Record<Language, LocalizedContent> = {
 			cv: "View my CV",
 			emailSubject: "Contact from your portfolio",
 			emailBody: "Hello Adrien,\n\nI am reaching out regarding...\n\n",
+			opensInNewTab: "opens in a new tab",
 		},
 
 		about: {
@@ -431,6 +435,7 @@ export const content: Record<Language, LocalizedContent> = {
 					"Integrated tests for a VoIP application involving telecommunications protocols such as SIP, TCP, UDP, and HTTP, with automated execution through TeamCity.",
 					"Worked with several languages, including Perl, C#, and Python, and tools such as Visual Studio Code, Wireshark, PuTTY, and Git.",
 				],
+				link: "https://www.m5technologies.com/",
 			},
 		],
 

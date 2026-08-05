@@ -41,7 +41,7 @@ export default function Header() {
 
 	return (
 		<header className={styles.header}>
-			<nav className={`container ${styles.navigation}`}>
+			<nav className={styles.navigation}>
 				<a
 					className={styles.logo}
 					href="#home"
@@ -76,23 +76,53 @@ export default function Header() {
 					id="main-navigation"
 				>
 					<div className={styles.navigationLinks}>
-						<a href="#about" onClick={handleNavigation}>
+						<a
+							href="#about"
+							onClick={() => {
+								changeLanguage("fr");
+								handleNavigation;
+							}}
+						>
 							{text.navigation.about}
 						</a>
 
-						<a href="#experience" onClick={handleNavigation}>
+						<a
+							href="#experience"
+							onClick={() => {
+								changeLanguage("fr");
+								handleNavigation;
+							}}
+						>
 							{text.navigation.experience}
 						</a>
 
-						<a href="#education" onClick={handleNavigation}>
+						<a
+							href="#education"
+							onClick={() => {
+								changeLanguage("fr");
+								handleNavigation;
+							}}
+						>
 							{text.navigation.education}
 						</a>
 
-						<a href="#projects" onClick={handleNavigation}>
+						<a
+							href="#projects"
+							onClick={() => {
+								changeLanguage("fr");
+								handleNavigation;
+							}}
+						>
 							{text.navigation.projects}
 						</a>
 
-						<a href="#contact" onClick={handleNavigation}>
+						<a
+							href="#contact"
+							onClick={() => {
+								changeLanguage("fr");
+								handleNavigation;
+							}}
+						>
 							{text.navigation.contact}
 						</a>
 					</div>

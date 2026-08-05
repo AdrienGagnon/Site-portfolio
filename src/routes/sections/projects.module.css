@@ -144,34 +144,6 @@
 	letter-spacing: -0.025em;
 }
 
-.iconLink {
-	display: inline-flex;
-	width: 2.4rem;
-	height: 2.4rem;
-	flex-shrink: 0;
-	align-items: center;
-	justify-content: center;
-
-	border: 0.0625rem solid var(--color-border);
-	border-radius: 0.75rem;
-
-	background: var(--color-surface-alt);
-	color: var(--color-primary);
-	font-size: 1.1rem;
-	font-weight: 800;
-
-	transition:
-		border-color 180ms ease,
-		background-color 180ms ease,
-		transform 180ms ease;
-}
-
-.iconLink:hover {
-	border-color: rgb(91 70 232 / 30%);
-	background: rgb(91 70 232 / 8%);
-	transform: translate(0.1rem, -0.1rem);
-}
-
 .projectDescription {
 	margin: 0 0 1.5rem;
 
@@ -204,13 +176,6 @@
 	font-size: 1rem;
 }
 
-.projectLink svg,
-.projectLink path {
-	width: 1.2rem;
-	height: 1.2rem;
-	fill: var(--color-primary);
-}
-
 .footer {
 	display: flex;
 	justify-content: center;
@@ -225,16 +190,6 @@
 .allProjectsButton span {
 	font-size: 1rem;
 	transition: transform 180ms ease;
-}
-
-.allProjectsButton path {
-	fill: var(--color-primary);
-	stroke: var(--color-surface);
-	transition: transform 150ms ease;
-}
-
-.allProjectsButton:hover path {
-	fill: var(--color-primary-hover);
 }
 
 @media (max-width: 53.125rem) {
@@ -274,11 +229,6 @@
 @media (max-width: 25rem) {
 	.projectHeader {
 		gap: 0.75rem;
-	}
-
-	.iconLink {
-		width: 2.2rem;
-		height: 2.2rem;
 	}
 
 	.technologies li {

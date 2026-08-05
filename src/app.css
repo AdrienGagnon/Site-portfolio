@@ -211,25 +211,6 @@ li::marker {
 	background-color: var(--color-text-muted);
 }
 
-.arrowIcon {
-	width: 1rem;
-	height: 1rem;
-	flex-shrink: 0;
-	object-fit: contain;
-}
-
-.iconLink .arrowIcon {
-	width: 1.1rem;
-	height: 1.1rem;
-}
-
-.linkIcon {
-	width: 1rem;
-	height: 1rem;
-	flex-shrink: 0;
-	object-fit: contain;
-}
-
 /* Card */
 
 .card {
@@ -248,20 +229,6 @@ li::marker {
 	.card {
 		padding: 24px;
 	}
-}
-
-/* svgIcon */
-
-.svgIcon {
-	justify-items: center;
-	align-content: center;
-	width: 1.6rem;
-	height: 1.6rem;
-}
-
-.svgIcon svg,
-.svgIcon path {
-	fill: var(--color-text);
 }
 
 /* Accessibility */

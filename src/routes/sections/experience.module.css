@@ -22,9 +22,27 @@
 }
 
 .company {
-	margin-bottom: 12px;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.2rem;
+	align-self: flex-start;
+
 	color: var(--color-text);
 	font-weight: 700;
+	line-height: 1.4;
+
+	transition: all 150ms ease;
+}
+
+.company:hover {
+	color: var(--color-primary);
+}
+
+.company:focus-visible {
+	border-radius: 0.25rem;
+	outline: 0.1875rem solid
+		color-mix(in srgb, var(--color-primary) 25%, transparent);
+	outline-offset: 0.25rem;
 }
 
 .description {
@@ -33,6 +51,7 @@
 	margin: 0;
 	padding-left: 20px;
 	color: var(--color-text-muted);
+	margin-top: 0.8rem;
 }
 
 .description li {

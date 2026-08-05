@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 
 import styles from "./studyCourses.module.css";
+import { UnderlinedButton } from "./buttons/underlinedButton";
 
 type StudyCoursesProps = {
 	courses: string[];
@@ -39,15 +40,13 @@ export function StudyCourses({
 				))}
 			</div>
 
-			<button
-				aria-controls={coursesId}
-				aria-expanded={isExpanded}
-				className={styles.studyClassesToggle}
-				onClick={() => setIsExpanded((current) => !current)}
-				type="button"
-			>
-				{isExpanded ? showLessLabel : showAllLabel}
-			</button>
+			<UnderlinedButton
+				controlsId={coursesId}
+				isExpanded={isExpanded}
+				onToggle={() => setIsExpanded((currentValue) => !currentValue)}
+				showAllLabel={showAllLabel}
+				showLessLabel={showLessLabel}
+			/>
 		</div>
 	);
 }

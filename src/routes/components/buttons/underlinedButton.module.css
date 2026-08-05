@@ -1,0 +1,54 @@
+@import url("../../../variables.css");
+
+.toggleButton {
+	position: relative;
+
+	margin-top: 0.875rem;
+	padding: 0;
+	border: 0;
+
+	background: transparent;
+	color: var(--color-primary);
+
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 800;
+}
+
+.toggleButton::after {
+	position: absolute;
+	right: 0;
+	bottom: -0.125rem;
+	left: 0;
+
+	height: 0.125rem;
+
+	background: var(--color-primary);
+
+	content: "";
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: center;
+
+	transition:
+		opacity 180ms ease,
+		transform 180ms ease;
+}
+
+.toggleButton:hover::after {
+	opacity: 1;
+	transform: scaleX(1);
+}
+
+.toggleButton:focus-visible {
+	border-radius: 0.25rem;
+	outline: 0.1875rem solid
+		color-mix(in srgb, var(--color-primary) 25%, transparent);
+	outline-offset: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.toggleButton::after {
+		transition: none;
+	}
+}
