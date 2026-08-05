@@ -1,8 +1,8 @@
 import BackgroundLineItem from "./backgroundLineItem";
 
-import styles from "./headerBackground.module.css";
+import styles from "./heroBackground.module.css";
 
-export default function HeaderBackground() {
+export default function HeroBackground() {
 	const bottomLeftPath =
 		"M-29.22277,6.64735c38.01389,0,60.89897,16.40309,64.42816,55.22414c1.24727,13.71996-2.72958,28.88487,3.06801,41.92944c9.90033,22.27574,28.29223,25.7886,36.81609,54.20147c4.81163,16.03877-6.55174,34.45063,1.02267,49.59946c8.79694,17.59389,26.69629,19.93339,37.83876,34.25942c19.84929,25.52051,20.96472,58.31373,20.96472,89.48355";
 
