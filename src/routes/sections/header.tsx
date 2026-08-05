@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { useState } from "react";
 import { useLanguage } from "~/contexts/languageContext";
 
@@ -7,8 +8,31 @@ export default function Header() {
 	const { language, text, changeLanguage } = useLanguage();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const closeMenu = () => {
+	const handleNavigation = (event: MouseEvent<HTMLAnchorElement>) => {
+		event.preventDefault();
+
+		const sectionId = event.currentTarget.hash.slice(1);
+
 		setIsMenuOpen(false);
+
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				const section = document.getElementById(sectionId);
+
+				if (!section) {
+					return;
+				}
+
+				section.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+				});
+
+				if (window.location.hash !== `#${sectionId}`) {
+					window.history.pushState(null, "", `#${sectionId}`);
+				}
+			});
+		});
 	};
 
 	const toggleMenu = () => {
@@ -18,7 +42,11 @@ export default function Header() {
 	return (
 		<header className={styles.header}>
 			<nav className={`container ${styles.navigation}`}>
-				<a className={styles.logo} href="#home" onClick={closeMenu}>
+				<a
+					className={styles.logo}
+					href="#home"
+					onClick={handleNavigation}
+				>
 					Adrien Gagnon
 				</a>
 
@@ -48,23 +76,23 @@ export default function Header() {
 					id="main-navigation"
 				>
 					<div className={styles.navigationLinks}>
-						<a href="#about" onClick={closeMenu}>
+						<a href="#about" onClick={handleNavigation}>
 							{text.navigation.about}
 						</a>
 
-						<a href="#experience" onClick={closeMenu}>
+						<a href="#experience" onClick={handleNavigation}>
 							{text.navigation.experience}
 						</a>
 
-						<a href="#education" onClick={closeMenu}>
+						<a href="#education" onClick={handleNavigation}>
 							{text.navigation.education}
 						</a>
 
-						<a href="#projects" onClick={closeMenu}>
+						<a href="#projects" onClick={handleNavigation}>
 							{text.navigation.projects}
 						</a>
 
-						<a href="#contact" onClick={closeMenu}>
+						<a href="#contact" onClick={handleNavigation}>
 							{text.navigation.contact}
 						</a>
 					</div>
@@ -83,7 +111,7 @@ export default function Header() {
 							lang="fr"
 							onClick={() => {
 								changeLanguage("fr");
-								closeMenu();
+								handleNavigation;
 							}}
 							type="button"
 						>
@@ -99,7 +127,7 @@ export default function Header() {
 							lang="en"
 							onClick={() => {
 								changeLanguage("en");
-								closeMenu();
+								handleNavigation;
 							}}
 							type="button"
 						>

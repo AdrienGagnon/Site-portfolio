@@ -1,3 +1,5 @@
+@import url(../../variables.css);
+
 .studyClasses {
 	margin-top: 22px;
 }
@@ -23,6 +25,7 @@
 }
 
 .studyClassesToggle {
+	position: relative;
 	margin-top: 14px;
 	padding: 0;
 	border: 0;
@@ -33,8 +36,26 @@
 	font-weight: 800;
 }
 
-.studyClassesToggle:hover {
-	text-decoration: underline;
+.studyClassesToggle::after {
+	position: absolute;
+	width: 100%;
+	bottom: -2px;
+	left: 0;
+
+	height: 2px;
+
+	background: var(--color-primary);
+
+	content: "";
+	opacity: 0;
+	transform: scaleX(0);
+
+	transition: all 180ms;
+}
+
+.studyClassesToggle:hover::after {
+	opacity: 1;
+	transform: scaleX(1);
 }
 
 .studyClassesToggle:focus-visible {

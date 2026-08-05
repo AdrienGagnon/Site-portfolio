@@ -83,7 +83,6 @@ p {
 	min-height: calc(100svh - var(--header-height));
 	align-items: center;
 	padding-block: var(--section-spacing);
-	scroll-margin-top: var(--header-height);
 }
 
 .section h2 {
@@ -201,6 +200,11 @@ li::marker {
 	border: none;
 	color: var(--color-surface);
 	background: var(--color-text);
+	gap: 0.25rem;
+}
+
+.button-invert path {
+	stroke: var(--color-surface);
 }
 
 .button-invert:hover {

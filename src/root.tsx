@@ -34,6 +34,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				/>
 				<Meta />
 				<Links />
+
+				<link href="/assets/favicon.png" rel="icon" type="image/png" />
 			</head>
 			<body>
 				{children}

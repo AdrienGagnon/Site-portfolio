@@ -389,14 +389,14 @@ export const content: Record<Language, LocalizedContent> = {
 				internships: [
 					{
 						period: "May 2022 — August 2022",
-						role: "Stagiaire en recherche en biologie",
+						role: "Biology Research Intern",
 						company: "Commissariat à l’Énergie Atomique (CEA)",
 						site: "Grenoble, France",
 						description: [""],
 					},
 					{
 						period: "September 2021 — December 2021",
-						role: "Stagiaire en synthèse de peptides",
+						role: "Peptide Synthesis Intern",
 						company:
 							"Institut de pharmacologie de Sherbrooke (IPS)",
 						site: "Sherbrooke",
@@ -404,15 +404,15 @@ export const content: Record<Language, LocalizedContent> = {
 					},
 					{
 						period: "January 2021 — April 2021",
-						role: "Stagiaire en recherche en chimie organique",
+						role: "Organic Chemistry Research Intern",
 						company: "OmegaChem",
 						site: "Lévis",
 						description: [""],
 					},
 					{
 						period: "May 2020 — August 2020",
-						role: "Stagiaire en électrochimie",
-						company: "Laboratoire du Pre. Gessie Brisard",
+						role: "Electrochemistry Research Intern",
+						company: "Prof. Gessie Brisard’s Laboratory",
 						site: "Université de Sherbrooke",
 
 						description: [""],

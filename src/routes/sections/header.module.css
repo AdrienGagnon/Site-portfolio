@@ -93,10 +93,10 @@
 		transform 180ms ease;
 }
 
-.navigationLinks a:hover {
+.navigationLinks a:hover,
+.navigationLinks a:active {
 	color: var(--color-text);
 	background: var(--color-surface-hover);
-	transform: translateY(-1px);
 }
 
 .navigationLinks a:hover::after {
