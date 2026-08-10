@@ -32,10 +32,10 @@
 	flex-shrink: 0;
 
 	padding: 0.25rem;
-	border: 0.0625rem solid #e4e4ec;
+	border: 0.0625rem solid var(--color-surface-hover);
 	border-radius: 0.75rem;
 
-	background: #f4f4f8;
+	background: var(--color-card-transparent);
 }
 
 .logo {

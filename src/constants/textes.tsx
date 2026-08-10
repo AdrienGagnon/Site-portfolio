@@ -56,6 +56,7 @@ type LocalizedContent = {
 		title: string;
 		first: string;
 		second: string;
+		imageAlt: string;
 	};
 
 	career: {
@@ -152,6 +153,7 @@ export const content: Record<Language, LocalizedContent> = {
 			title: "Qui suis-je?",
 			first: "Développeur informatique originaire de Sherbrooke et récemment diplômé d’une maîtrise en informatique, je souhaite relever de nouveaux défis. Curieux, efficace et reconnu pour mon esprit d’équipe, je m’adapte rapidement à de nouveaux environnements et j’aborde les problèmes complexes avec rigueur. Mon parcours m’a permis d’acquérir une solide expérience, autant en recherche qu’en milieu industriel.",
 			second: "Je cherche constamment à développer mes compétences, à découvrir de nouvelles technologies et à participer à des projets stimulants.",
+			imageAlt: "Portrait d’Adrien Gagnon",
 		},
 
 		career: {
@@ -337,6 +339,7 @@ export const content: Record<Language, LocalizedContent> = {
 			title: "Who am I?",
 			first: "I am a software developer from Sherbrooke and a recent graduate with a master’s degree in computer science. I am looking for new professional challenges. Curious, efficient, and recognized for my teamwork skills, I adapt quickly to new environments and approach complex problems with rigor. My background has allowed me to gain solid experience in both research and industrial settings.",
 			second: "I am constantly looking to improve my skills, discover new technologies, and contribute to challenging projects.",
+			imageAlt: "Portrait of Adrien Gagnon",
 		},
 
 		career: {

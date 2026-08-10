@@ -79,7 +79,6 @@ export default function Header() {
 						<a
 							href="#about"
 							onClick={() => {
-								changeLanguage("fr");
 								handleNavigation;
 							}}
 						>
@@ -89,7 +88,6 @@ export default function Header() {
 						<a
 							href="#experience"
 							onClick={() => {
-								changeLanguage("fr");
 								handleNavigation;
 							}}
 						>
@@ -99,7 +97,6 @@ export default function Header() {
 						<a
 							href="#education"
 							onClick={() => {
-								changeLanguage("fr");
 								handleNavigation;
 							}}
 						>
@@ -109,7 +106,6 @@ export default function Header() {
 						<a
 							href="#projects"
 							onClick={() => {
-								changeLanguage("fr");
 								handleNavigation;
 							}}
 						>
@@ -119,7 +115,6 @@ export default function Header() {
 						<a
 							href="#contact"
 							onClick={() => {
-								changeLanguage("fr");
 								handleNavigation;
 							}}
 						>
