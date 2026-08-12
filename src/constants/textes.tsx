@@ -267,7 +267,7 @@ export const content: Record<Language, LocalizedContent> = {
 			{
 				title: "ICodeThis",
 				description:
-					"Une courte description du projet, du problème résolu et de ce que tu as personnellement développé.",
+					"Plateforme de défis quotidiens pour concevoir des interfaces avec HTML, CSS et JavaScript à partir d'une image.",
 				image: "/assets/icodethissample.png",
 				imageAlt: "Aperçu du premier projet",
 				technologies: ["JavaScript", "HTML", "CSS"],
@@ -276,7 +276,7 @@ export const content: Record<Language, LocalizedContent> = {
 			{
 				title: "RtPartition",
 				description:
-					"Une description concise expliquant l’objectif du projet et les technologies utilisées pour le réaliser.",
+					"Une application pour afficher en temps réel les entrées d'un piano électrique sur une partition.",
 				image: "/assets/rtpartition.png",
 				imageAlt: "Aperçu du troisième projet",
 				technologies: ["C++", "Lomse", "Qt"],
@@ -285,7 +285,7 @@ export const content: Record<Language, LocalizedContent> = {
 			{
 				title: "Ancien site web",
 				description:
-					"Une brève présentation des fonctionnalités principales et des apprentissages réalisés pendant le développement.",
+					"Mon ancien site portfolio qui m'a permis d'en apprendre sur le développement web avec React.",
 				image: "/assets/oldsite.png",
 				imageAlt: "Aperçu du deuxième projet",
 				technologies: ["React", "HTML", "CSS"],
@@ -454,7 +454,7 @@ export const content: Record<Language, LocalizedContent> = {
 			{
 				title: "ICodeThis",
 				description:
-					"Une courte description du projet, du problème résolu et de ce que tu as personnellement développé.",
+					"Daily challenges to conceive an interface with HTML, CSS and JavaScript.",
 				image: "/assets/icodethissample.png",
 				imageAlt: "Aperçu du premier projet",
 				technologies: ["JavaScript", "HTML", "CSS"],
@@ -463,16 +463,16 @@ export const content: Record<Language, LocalizedContent> = {
 			{
 				title: "RtPartition",
 				description:
-					"Une description concise expliquant l’objectif du projet et les technologies utilisées pour le réaliser.",
+					"An application that builds a sheet music in real time when an electric piano is played.",
 				image: "/assets/rtpartition.png",
 				imageAlt: "Aperçu du troisième projet",
 				technologies: ["C++", "Lomse", "Qt"],
 				githubUrl: "https://github.com/AdrienGagnon/RtPartition",
 			},
 			{
-				title: "Ancien site web",
+				title: "Old portfolio website",
 				description:
-					"Une brève présentation des fonctionnalités principales et des apprentissages réalisés pendant le développement.",
+					"My old portfolio website that I used to learn about web development.",
 				image: "/assets/oldsite.png",
 				imageAlt: "Aperçu du deuxième projet",
 				technologies: ["React", "HTML", "CSS"],
