@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "~/contexts/languageContext";
 
 import styles from "./header.module.css";
@@ -7,6 +7,33 @@ import styles from "./header.module.css";
 export default function Header() {
 	const { language, text, changeLanguage } = useLanguage();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const menuRef = useRef<HTMLDivElement>(null);
+	const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event: PointerEvent) => {
+			const target = event.target;
+
+			if (!(target instanceof Node)) return;
+
+			if (
+				menuRef.current?.contains(target) ||
+				menuButtonRef.current?.contains(target)
+			) {
+				return;
+			}
+
+			setIsMenuOpen(false);
+		};
+
+		if (isMenuOpen) {
+			document.addEventListener("pointerdown", handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener("pointerdown", handleClickOutside);
+		};
+	}, [isMenuOpen]);
 
 	const handleNavigation = (event: MouseEvent<HTMLAnchorElement>) => {
 		event.preventDefault();
@@ -51,6 +78,7 @@ export default function Header() {
 				</a>
 
 				<button
+					ref={menuButtonRef}
 					aria-controls="main-navigation"
 					aria-expanded={isMenuOpen}
 					aria-label={
@@ -70,54 +98,30 @@ export default function Header() {
 				</button>
 
 				<div
+					ref={menuRef}
 					className={`${styles.navigationRight} ${
 						isMenuOpen ? styles.navigationRightOpen : ""
 					}`}
 					id="main-navigation"
 				>
 					<div className={styles.navigationLinks}>
-						<a
-							href="#about"
-							onClick={() => {
-								handleNavigation;
-							}}
-						>
+						<a href="#about" onClick={handleNavigation}>
 							{text.navigation.about}
 						</a>
 
-						<a
-							href="#experience"
-							onClick={() => {
-								handleNavigation;
-							}}
-						>
+						<a href="#experience" onClick={handleNavigation}>
 							{text.navigation.experience}
 						</a>
 
-						<a
-							href="#education"
-							onClick={() => {
-								handleNavigation;
-							}}
-						>
+						<a href="#education" onClick={handleNavigation}>
 							{text.navigation.education}
 						</a>
 
-						<a
-							href="#projects"
-							onClick={() => {
-								handleNavigation;
-							}}
-						>
+						<a href="#projects" onClick={handleNavigation}>
 							{text.navigation.projects}
 						</a>
 
-						<a
-							href="#contact"
-							onClick={() => {
-								handleNavigation;
-							}}
-						>
+						<a href="#contact" onClick={handleNavigation}>
 							{text.navigation.contact}
 						</a>
 					</div>

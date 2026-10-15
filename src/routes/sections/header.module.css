@@ -269,6 +269,10 @@
 			transform 180ms ease;
 	}
 
+	.navigationRight:not(.navigationRightOpen) {
+		visibility: hidden;
+	}
+
 	.navigationRightOpen {
 		opacity: 1;
 		pointer-events: auto;

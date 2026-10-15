@@ -10,6 +10,10 @@
 	z-index: 1;
 }
 
+.hero > div {
+	padding-inline: 5rem;
+}
+
 .title {
 	max-width: 900px;
 	margin-bottom: 8px;
@@ -43,6 +47,10 @@
 	.hero {
 		min-height: auto;
 		padding-block: 5.625rem;
+	}
+
+	.hero > div {
+		padding: 0;
 	}
 
 	.actions {
